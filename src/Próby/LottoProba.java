@@ -14,11 +14,15 @@ public class LottoProba {
         int[] tablica = new int[6];
 
         for (int i = 0; i < tablica.length; i++) {
-           tablica[i] = sc.nextInt();
-            for (int j = 0; j < tablica.length ; j++) {
-                if(tablica[j] == tablica[i]){
-                    System.out.println("podano już tę liczbę, proszę podać inna");
+            int liczba = sc.nextInt();
+            tablica[i] = liczba;
+            for (int j = 0; j < tablica.length; j++) {
+
+                if (liczba == tablica[j]) {
+                    System.out.println("Podano już tę liczbę, proszę podać inną");
                     tablica[j] = sc.nextInt();
+                    j = 0;
+
                 }
             }
         }
