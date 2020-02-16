@@ -10,15 +10,9 @@ public class Osoba {
     private int wiek;
     private int liczbaDzieci;
     private boolean stacCywilny;
-    private int index;
 
-    public int getIndex() {
-        return index;
-    }
 
-    public void setIndex(int index) {
-        this.index = index;
-    }
+
 
     public void infoPelne() {
        imie = this.imie.toUpperCase();

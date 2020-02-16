@@ -8,10 +8,11 @@ public class ListaPracownikow {
 
     public void listaWydruk() {
         for (int i = 0; i < listaPracownikow.length; i++) {
-           if(listaPracownikow[i] != null) {
-               System.out.println(listaPracownikow[i]);}
+            if (listaPracownikow[i] != null) {
+                System.out.println(listaPracownikow[i]);
+            }
 
-           }
+        }
 
 
 //   public void addNewPracownik();
@@ -23,19 +24,26 @@ public class ListaPracownikow {
         p1.setImie("Andrzej");
         p1.setNazwisko("Kowalczyk");
         p1.setLiczbaDzieci(2);
-        p1.setIndex(1);
+
         listaPracownikow[1] = p2;
 
         p2.setImie("Iwona");
         p2.setNazwisko("Szymbi");
-        p2.setIndex(2);
 
 
 
         // tutaj wstawic metody najlepiej bo lista pracownikow juz tu jest
 
-
     }
+//todo Jak dodac nowa osobe?
+    public void addNewPracownik() {
+        for (int i = 0; i < listaPracownikow.length; i++) {
+            if (listaPracownikow[i] == null) {
+                String nazwaZmiennej = "p" + i;
+//                Osoba nazwaZmiennej = new Osoba();
 
+            }
+
+        }
+    }
 }
-
