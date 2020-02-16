@@ -23,6 +23,7 @@ listaPracownikow.dodajNowegoPracownika();
                 case "4":
                     listaPracownikow.wypiszWszystkichPracownikow();
                     listaPracownikow.usuwaniePracownikaZListy();
+                    break;
                 case "e":
                 case "q":
                     System.out.println("Koniec programu");
