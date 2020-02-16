@@ -10,6 +10,15 @@ public class Osoba {
     private int wiek;
     private int liczbaDzieci;
     private boolean stacCywilny;
+    private int index;
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
     public void infoPelne() {
        imie = this.imie.toUpperCase();
@@ -63,6 +72,70 @@ public class Osoba {
     }
 
 
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+    public char getPlec() {
+        return plec;
+    }
+
+    public void setPlec(char plec) {
+        this.plec = plec;
+    }
+
+    public int getNumerDzialu() {
+        return numerDzialu;
+    }
+
+    public void setNumerDzialu(int numerDzialu) {
+        this.numerDzialu = numerDzialu;
+    }
+
+    public float getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(float placa) {
+        this.placa = placa;
+    }
+
+    public int getWiek() {
+        return wiek;
+    }
+
+    public void setWiek(int wiek) {
+        this.wiek = wiek;
+    }
+
+    public int getLiczbaDzieci() {
+        return liczbaDzieci;
+    }
+
+    public void setLiczbaDzieci(int liczbaDzieci) {
+        this.liczbaDzieci = liczbaDzieci;
+    }
+
+    public boolean isStacCywilny() {
+        return stacCywilny;
+    }
+
+    public void setStacCywilny(boolean stacCywilny) {
+        this.stacCywilny = stacCywilny;
+    }
+
     public double procentPodwyzki(double procent) {
         double podwyzka = this.placa * procent;
         if (liczbaDzieci >= 1) {
@@ -74,5 +147,10 @@ public class Osoba {
         }
 
         return podwyzka;
+
+
+
+
+
     }
 }

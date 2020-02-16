@@ -8,15 +8,17 @@ public class firma {
         Scanner sc = new Scanner(System.in);
 
         Menu menu = new Menu();
-        String linia = "";
-        while (linia != "e") {
+        String akcja = "";
 
-            menu.printMenu();
-            linia = sc.nextLine();
-            System.out.println(linia);
-        }
-        ListaPracownikow listaPracownikow = new ListaPracownikow();
-        listaPracownikow.addNewPracownik();
+        System.out.println("Podaj opcję:");
+        System.out.println("Menu" +'\n' + 1 +" Wypisywanie listy wszystkich pracowników"+ '\n'+2 +" Dodanie nowych pracowników" + 3 +" Eksport"+ '\n' + 4+" Usuwanie pracownika" + '\n' + 5 +" Edycja danych"+ '\n' + 6
+                +" Dodatkowe funckje"+ '\n' + 7 +" Eksport danych do liku"+ '\n' + 8 + " Informacja o programie");
+
+        menu.printMenu(akcja);
+
+        ;
+            ListaPracownikow listaPracownikow = new ListaPracownikow();
+//            listaPracownikow.addNewPracownik();
 
 
 
