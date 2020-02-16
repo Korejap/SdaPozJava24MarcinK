@@ -91,13 +91,13 @@ public class ListaPracownikow {
 //              if (listaPracownikow[i] != null) {
 //                  System.out.print(i + 1 + ". ");
 //                  listaPracownikow[i].wypiszOkrojoneDane();
-//                  licznikPracownikow--;
 //              }
-//          }
 //          Scanner sc = new Scanner(System.in);
 //          System.out.println("Podaj pozycję z której chcesz usunąc pracownika: ");
 //          int usuwanaPozycja = sc.nextInt();
 //          listaPracownikow[usuwanaPozycja - 1] = null;
+//                  licznikPracownikow--;
+//          }
 
 
 
