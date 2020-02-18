@@ -113,6 +113,26 @@ int licznik = 0;
             }
             System.out.println();
         }
+        System.out.println();
+        for (int i = 0; i < wielkosc ; i++) {
+            int zakres = wielkosc/2;
+            for (int j = 0; j < wielkosc; j++) {
+//                if(wielkosc %2 ==1){
+                if (j >= zakres - i && zakres + i >= j) {
+                    System.out.print("#" );
+                }else {
+                    System.out.print(" ");
+
+                    }
+//                }
+
+            }
+            if(i >= wielkosc/2){
+               break;
+            }else {
+                System.out.println();
+            }
+        }
 
 
         }
