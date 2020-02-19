@@ -114,6 +114,8 @@ int licznik = 0;
             System.out.println();
         }
         System.out.println();
+
+        //choinka piramidka
         for (int i = 0; i < wielkosc ; i++) {
             int zakres = wielkosc/2;
             for (int j = 0; j < wielkosc; j++) {
@@ -124,7 +126,7 @@ int licznik = 0;
                     System.out.print(" ");
 
                     }
-//                }
+
 
             }
             if(i >= wielkosc/2){
