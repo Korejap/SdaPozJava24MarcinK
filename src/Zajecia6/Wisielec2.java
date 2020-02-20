@@ -17,6 +17,8 @@ public class Wisielec2 {
         char odpowiedz = litera.toUpperCase().charAt(0);
         char tablica[] = new char[wyraz.length()];
         char tablica2[] = new char[tablica.length];
+int wygrana = 0;
+
 
 // karta odpowiedzi
         for (int i = 0; i < tablica2.length; i++) {
@@ -68,12 +70,30 @@ public class Wisielec2 {
                 switch (nowaGra) {
                     case 'Y':
                         zycie = 5;
+                        System.out.println("Podaj wyraz dla przeciwnika");
+
+                  wyraz = sc.nextLine().toUpperCase();
+                        System.out.println("Kolej przeciwnika");
+
+
+                     // karta odpowiedzi
+                        for (int i = 0; i < tablica2.length; i++) {
+                            tablica2[i] = '_';
+                        }
+
+                        //wprowadzenie do tablicy1
+                        for (int i = 0; i < wyraz.length(); i++) {
+                            tablica[i] = wyraz.charAt(i);
+                        }
                         break;
                     case 'N':
                         break;
                 }
             }
-                System.out.println("Podaj kolejną literę: ");
+            if (wygrana > 0) {
+
+                System.out.println("Podaj literę: ");
+            }
                 litera = sc.nextLine();
                 odpowiedz = litera.toUpperCase().charAt(0);
 
