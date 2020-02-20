@@ -38,14 +38,13 @@ int wygrana = 0;
         while (zycie >= 0) {
 
 
-
-
             //sprawdzanie
             int poprawnaOdp = 0;
             for (int i = 0; i < tablica.length; i++) {
                 if (odpowiedz == tablica[i]) {
                     tablica2[i] = odpowiedz;
                     poprawnaOdp++;
+                    wygrana++;
 
 
                 }
@@ -70,13 +69,14 @@ int wygrana = 0;
                 switch (nowaGra) {
                     case 'Y':
                         zycie = 5;
+                        wygrana=0;
                         System.out.println("Podaj wyraz dla przeciwnika");
 
-                  wyraz = sc.nextLine().toUpperCase();
+                        wyraz = sc.nextLine().toUpperCase();
                         System.out.println("Kolej przeciwnika");
 
 
-                     // karta odpowiedzi
+                        // karta odpowiedzi
                         for (int i = 0; i < tablica2.length; i++) {
                             tablica2[i] = '_';
                         }
@@ -87,14 +87,44 @@ int wygrana = 0;
                         }
                         break;
                     case 'N':
+                        System.exit(0);
                         break;
                 }
             }
-            if (wygrana > 0) {
+            if (wygrana >= tablica.length){
+                System.out.println("Gratulacje!!! Wygrałeś!!");
+wygrana=0;
+                    System.out.println("Czy chcesz zagrać ponownie?");
+                    System.out.println("Y - tak | N - nie");
+                    String checKontynuacji = sc.nextLine();
+                    char nowaGra = checKontynuacji.toUpperCase().charAt(0);
+                    switch (nowaGra) {
+                        case 'Y':
+                            zycie = 5;
+                            System.out.println("Podaj wyraz dla przeciwnika");
 
-                System.out.println("Podaj literę: ");
+                            wyraz = sc.nextLine().toUpperCase();
+                            System.out.println("Kolej przeciwnika");
+
+
+                            // karta odpowiedzi
+                            for (int i = 0; i < tablica2.length; i++) {
+                                tablica2[i] = '_';
+                            }
+
+                            //wprowadzenie do tablicy1
+                            for (int i = 0; i < wyraz.length(); i++) {
+                                tablica[i] = wyraz.charAt(i);
+                            }
+                            break;
+                        case 'N':
+                            System.exit(0);
+                            break;
+                    }
+
             }
-                litera = sc.nextLine();
+            System.out.println("Podaj literę: ");
+            litera = sc.nextLine();
                 odpowiedz = litera.toUpperCase().charAt(0);
 
 
