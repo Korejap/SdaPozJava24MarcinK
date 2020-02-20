@@ -1,10 +1,9 @@
 package Zajecia6;
 
+import java.util.Arrays;
 import java.util.Scanner;
-public class Wisielec2{
 
-
-
+public class Wisielec2 {
 
 
     public static void main(String[] args) {
@@ -12,21 +11,17 @@ public class Wisielec2{
         System.out.println("Podaj wyraz dla przeciwnika");
         Scanner sc = new Scanner(System.in);
         String wyraz = sc.nextLine().toUpperCase();
-        System.out.println("Kolej przeciwnika" );
+        System.out.println("Kolej przeciwnika");
         System.out.println("Podaj literę");
-String litera = sc.nextLine();
-char odpowiedz = litera.toUpperCase().charAt(0);
+        String litera = sc.nextLine();
+        char odpowiedz = litera.toUpperCase().charAt(0);
         char tablica[] = new char[wyraz.length()];
         char tablica2[] = new char[tablica.length];
-// warunek zycie + pętla podawanie kolejnych opcji
-        if(zycie > 0){
-            while ( zycie > 0) {
 
-            }
-
-        }else System.out.println("Game Over");
-
-
+// karta odpowiedzi
+        for (int i = 0; i < tablica2.length; i++) {
+            tablica2[i] = '_';
+        }
 
         //wprowadzenie do tablicy1
         for (int i = 0; i < wyraz.length(); i++) {
@@ -34,26 +29,56 @@ char odpowiedz = litera.toUpperCase().charAt(0);
         }
 
 
+        // warunek zycie +pętla podawanie kolejnych opcji
 
-        //sprawdzanie
-        int  poprawnaOdp = 0;
-        for (int i = 0; i <tablica.length ; i++) {
-            if(odpowiedz == tablica[i]){
-                tablica2[i] = tablica[i];
-                poprawnaOdp++;
+//petla do zycia
+
+        while (zycie >= 0) {
+
+
+
+
+            //sprawdzanie
+            int poprawnaOdp = 0;
+            for (int i = 0; i < tablica.length; i++) {
+                if (odpowiedz == tablica[i]) {
+                    tablica2[i] = odpowiedz;
+                    poprawnaOdp++;
+
+
+                }
             }
-            }
-            if(poprawnaOdp < 1){
+            if (poprawnaOdp < 1) {
                 System.out.println("Błąd! tracisz 1 życie");
                 zycie--;
                 System.out.println("Pozostała liczba żyć: " + zycie);
+            } else {
+                System.out.println("Trafiłeś" + '\n');
+                for (int i = 0; i < tablica2.length; i++) {
+                    System.out.print(tablica2[i]);
+                }
+            }
+
+            if (zycie <= 0) {
+                System.out.println("Game Over");
+                System.out.println("Czy chcesz zagrać ponownie?");
+                System.out.println("Y - tak | N - nie");
+                String checKontynuacji = sc.nextLine();
+                char nowaGra = checKontynuacji.toUpperCase().charAt(0);
+                switch (nowaGra) {
+                    case 'Y':
+                        zycie = 5;
+                        break;
+                    case 'N':
+                        break;
+                }
+            }
+                System.out.println("Podaj kolejną literę: ");
+                litera = sc.nextLine();
+                odpowiedz = litera.toUpperCase().charAt(0);
 
 
         }
-
-
-
-
 
     }
 
