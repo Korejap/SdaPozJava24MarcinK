@@ -66,6 +66,18 @@ public class ListaPracownikow {
             int index = pobierzIndexPracownika();
             listaPracownikow[index] = null;
             System.out.println("Usunięto");
+            for (int i = 0; i <listaPracownikow.length ; i++) {
+                if(listaPracownikow[i] == null){
+                    if(i != 99){
+                        listaPracownikow[i] = listaPracownikow[i+1];
+                        listaPracownikow[i+1] = null;
+                    }
+
+
+                }
+
+            }
+
         }else{
         System.out.println("Masz pusta liste");}
     }
