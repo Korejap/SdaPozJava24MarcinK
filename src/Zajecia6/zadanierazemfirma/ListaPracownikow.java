@@ -111,7 +111,7 @@ Random random = new Random();
 
 int limitGenerowanie = licznikPracownikow + generatorPracownikowIle;
 if(licznikPracownikow +generatorPracownikowIle >100){
-    System.out.println("Lista przyjmuje maksymalnie 100 osób. Obecnie jest wpisanych " + (100 - licznikPracownikow));
+    System.out.println("Lista przyjmuje maksymalnie 100 osób.");
 }else{
     while ( licznikPracownikow < limitGenerowanie) {
         int generujliczba2 = random.nextInt(2);
