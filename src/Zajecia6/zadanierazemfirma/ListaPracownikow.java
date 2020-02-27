@@ -1,11 +1,12 @@
 package Zajecia6.zadanierazemfirma;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class ListaPracownikow {
 
     private Osoba[] listaPracownikow = new Osoba[100];
-
+Random random = new Random();
 
     private int licznikPracownikow = 0;  //todo fajne, do przejrzenia i zapamietania
 
@@ -66,6 +67,8 @@ public class ListaPracownikow {
             int index = pobierzIndexPracownika();
             listaPracownikow[index] = null;
             System.out.println("Usunięto");
+            licznikPracownikow--;   // to moze powoidowac blad
+
             for (int i = 0; i <listaPracownikow.length ; i++) {
                 if(listaPracownikow[i] == null){
                     if(i != 99){
@@ -95,7 +98,58 @@ public class ListaPracownikow {
         }
         return suma;
     }
+/// Generator pracownika
 
+    public void generatorPracownikow(){
+        System.out.println("Ile pracowników chcesz wygenerowac");
+        Scanner sc = new Scanner(System.in);
+        int generatorPracownikowIle = sc.nextInt();
+
+        String imionaZenskie[] = new String[] {"Ewa" , "Edyta", "Jadwiga", "Barbara", "Genonefa", "Izabela" , "Wiesława", "Joanna", "Kinga", "Halina"};
+        String imionaMeskie[] = new String[] {"Zdzisław", "Igor", "Mietek", "Hulian", "Krzysztof", "Paweł", "Maurycy", "Marych", "Mirek", "Adam" };
+        String nazwiska[] = new String[] {"Nowak", "Kulczyk", "Kowalski", "Kowalczyk", "Wicher", "Sztos", "Bomba", "Miejski", "Pokraczny", "Iłłowicz"};
+
+int limitGenerowanie = licznikPracownikow + generatorPracownikowIle;
+if(licznikPracownikow +generatorPracownikowIle >100){
+    System.out.println("Lista przyjmuje maksymalnie 100 osób. Obecnie jest wpisanych " + (100 - licznikPracownikow));
+}else{
+    while ( licznikPracownikow < limitGenerowanie) {
+        int generujliczba2 = random.nextInt(2);
+        int generujLiczba10 = random.nextInt(10);
+        String imie;
+        char plec;
+        if(generujliczba2 == 0) {
+            plec = 'M';
+            generujLiczba10 = random.nextInt(10);
+            imie = imionaMeskie[generujLiczba10];
+        }else{
+            plec = 'K';
+            generujLiczba10 = random.nextInt(10);
+            imie = imionaZenskie[generujLiczba10];
+        }
+        generujLiczba10 = random.nextInt(10);
+        String nazwisko = nazwiska[generujLiczba10];
+
+        int numerDzialu = random.nextInt(5)+1;
+
+        float placa = random.nextInt(4000)+2000;
+        int wiek = random.nextInt(46)+20;
+        int liczbaDzieci = random.nextInt(5);
+        boolean stanCywilny = random.nextBoolean();
+
+
+
+        Osoba generujNowyPracownik = new Osoba(imie, nazwisko, plec, numerDzialu, placa, wiek, liczbaDzieci, stanCywilny);
+        listaPracownikow[licznikPracownikow++] = generujNowyPracownik;
+
+    }
+
+
+}
+        System.out.println("Obecnie pozosatło " + (100 -licznikPracownikow) + " miejsc na liście.");
+
+
+    }
 
 //      if(licznikPracownikow <0) {
 //          System.out.println("Nie mozna usunąć");}else {

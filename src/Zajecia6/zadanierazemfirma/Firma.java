@@ -24,6 +24,8 @@ listaPracownikow.dodajNowegoPracownika();
                     listaPracownikow.wypiszWszystkichPracownikow();
                     listaPracownikow.usuwaniePracownikaZListy();
                     break;
+                case "5":
+                    listaPracownikow.generatorPracownikow();
                 case "e":
                 case "q":
                     System.out.println("Koniec programu");
