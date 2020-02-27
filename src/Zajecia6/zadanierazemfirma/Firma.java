@@ -30,6 +30,9 @@ listaPracownikow.dodajNowegoPracownika();
                 case "q":
                     System.out.println("Koniec programu");
                     break;
+                case "6":
+                    listaPracownikow.wypiszWszystkichPracownikowFull();
+                    listaPracownikow.edycjaDanych();
                 default:
                     System.out.println("Błedna akcja");
 

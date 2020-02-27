@@ -54,6 +54,14 @@ Random random = new Random();
         }
     }
 
+    public void wypiszWszystkichPracownikowFull() {
+        for (int i = 0; i < listaPracownikow.length; i++) {
+            if (listaPracownikow[i] != null) {
+                listaPracownikow[i].infoPelne(i);
+            }
+
+        }
+    }
     private int pobierzIndexPracownika() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Podaj indeks uczestnika");
@@ -149,6 +157,149 @@ if(licznikPracownikow +generatorPracownikowIle >100){
         System.out.println("Obecnie pozosatło " + (100 -licznikPracownikow) + " miejsc na liście.");
 
 
+    }
+
+
+
+    //Edycja Danych
+
+    public void edycjaDanych(){
+        System.out.println("Którego pracownika chcesz edytowac?");
+Scanner scanner = new Scanner(System.in);
+int numerEdycjiOsoby = scanner.nextInt();
+        listaPracownikow[numerEdycjiOsoby].infoPelne(numerEdycjiOsoby);
+        if(listaPracownikow[numerEdycjiOsoby].pokazPlec() == 'K'){
+            System.out.println("Podaj numer żeby edytować"+ '\n' +
+                    "nazwisko = 1 " +
+                            ", Numer działu = 2 " +
+                            ", płaca = 3 " +
+                            ", wiek = 4 " +
+                            ", liczba dzieci = 5 " +
+                            ", stan cywilny = 6" +
+                            ", Wszystko = 7");
+
+           int numerEdycjipola = scanner.nextInt();
+            switch (numerEdycjipola) {
+                case 1:
+                    System.out.println("Podaj nowe nazwisko:");
+                    String noweNazwisko = scanner.next();
+                    listaPracownikow[numerEdycjiOsoby].setNazwisko(noweNazwisko);
+                    break;
+                case 2:
+                    System.out.println("Podaj nowy numer działu: ");
+                    int noweNumerDzialu = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setNumerDzialu(noweNumerDzialu);
+                    break;
+                case 3:
+                    System.out.println("Podaj nową płacę: ");
+                    float nowePlaca = scanner.nextFloat();
+                    listaPracownikow[numerEdycjiOsoby].setPlaca(nowePlaca);
+                    break;
+                case 4:
+                    System.out.println("Podaj nowy wiek: ");
+                    int noweWiek= scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setWiek(noweWiek);
+                    break;
+                case 5:
+                    System.out.println("Podaj nową liczbę dzieci: ");
+                    int nowyDzieci= scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setLiczbaDzieci(nowyDzieci);
+                    break;
+                case 6:
+                    System.out.println("Podaj nowy stan cywyilny: ");
+                    boolean nowyStan = scanner.nextBoolean();
+                    listaPracownikow[numerEdycjiOsoby].setStacCywilny(nowyStan);
+                    break;
+                case 7:
+                    System.out.println("Podaj nowe dane. ");
+                    System.out.println("Podaj nowe nazwisko:");
+                    noweNazwisko = scanner.next();
+                    listaPracownikow[numerEdycjiOsoby].setNazwisko(noweNazwisko);
+                    System.out.println("Podaj nowy numer działu: ");
+                    noweNumerDzialu = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setNumerDzialu(noweNumerDzialu);
+                    System.out.println("Podaj nową płacę: ");
+                    nowePlaca = scanner.nextFloat();
+                    listaPracownikow[numerEdycjiOsoby].setPlaca(nowePlaca);
+                    System.out.println("Podaj wiek: ");
+                  noweWiek= scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setWiek(noweWiek);
+                    System.out.println("Podaj nową liczbę dzieci: ");
+                    nowyDzieci= scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setLiczbaDzieci(nowyDzieci);
+                    System.out.println("Podaj nowy stan cywyilny: ");
+                     nowyStan = scanner.nextBoolean();
+                    listaPracownikow[numerEdycjiOsoby].setStacCywilny(nowyStan);
+
+                    break;
+                default:
+                    System.out.println("Błędne dane");
+                    break;
+            }
+        }else {
+            System.out.println(
+
+                    "Numer działu = 1 " +
+                    ", płaca = 2 " +
+                    ", wiek = 3 " +
+                    ", liczba dzieci = 4 " +
+                    ", stan cywilny = 5" +
+                    ", Wszystko = 6");
+
+
+            int numerEdycjipola = scanner.nextInt();
+            switch (numerEdycjipola) {
+
+                case 1:
+                    System.out.println("Podaj nowy numer działu: ");
+                    int noweNumerDzialu = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setNumerDzialu(noweNumerDzialu);
+                    break;
+                case 2:
+                    System.out.println("Podaj nową płacę: ");
+                    float nowePlaca = scanner.nextFloat();
+                    listaPracownikow[numerEdycjiOsoby].setPlaca(nowePlaca);
+                    break;
+                case 3:
+                    System.out.println("Podaj nowy wiek: ");
+                    int noweWiek= scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setWiek(noweWiek);
+                    break;
+                case 4:
+                    System.out.println("Podaj nową liczbę dzieci: ");
+                    int nowyDzieci = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setLiczbaDzieci(nowyDzieci);
+                    break;
+                case 5:
+                    System.out.println("Podaj nowy stan cywyilny: ");
+                    boolean nowyStan = scanner.nextBoolean();
+                    listaPracownikow[numerEdycjiOsoby].setStacCywilny(nowyStan);
+                    break;
+                case 6:
+                    System.out.println("Podaj nowe dane. ");
+
+                    System.out.println("Podaj nowy numer działu: ");
+                    noweNumerDzialu = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setNumerDzialu(noweNumerDzialu);
+                    System.out.println("Podaj nową płacę: ");
+                    nowePlaca = scanner.nextFloat();
+                    listaPracownikow[numerEdycjiOsoby].setPlaca(nowePlaca);
+                    System.out.println("Podaj wiek: ");
+                    noweWiek = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setWiek(noweWiek);
+                    System.out.println("Podaj nową liczbę dzieci: ");
+                    nowyDzieci = scanner.nextInt();
+                    listaPracownikow[numerEdycjiOsoby].setLiczbaDzieci(nowyDzieci);
+                    System.out.println("Podaj nowy stan cywyilny: ");
+                    nowyStan = scanner.nextBoolean();
+                    listaPracownikow[numerEdycjiOsoby].setStacCywilny(nowyStan);
+
+                    break;
+                default:
+                    System.out.println("Błędne dane");
+                    break;
+            }
+        }
     }
 
 //      if(licznikPracownikow <0) {

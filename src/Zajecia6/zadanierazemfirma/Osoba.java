@@ -63,7 +63,25 @@ public void wypiszSpecjalnie(){
         this.stacCywilny = stacCywilny;
 
     }
+    public char pokazPlec(){
+        return plec;
+    }
 
+    public void infoPelne(int index) {
+        String napis = "Index: " + index + " | Pracownik{" +
+                "Osoba{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", plec=" + plec +
+                ", Numer działu=" + numerDzialu +
+                ", płaca=" + placa +
+                ", wiek=" + wiek  +
+                ", liczba dzieci=" + liczbaDzieci  +
+                ", stan cywilny=" + stacCywilny  +
+
+                '}';
+        System.out.println(napis);
+    }
     public String getImie() {
         return imie;
     }
