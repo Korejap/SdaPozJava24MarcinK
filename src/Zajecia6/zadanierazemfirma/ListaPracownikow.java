@@ -316,8 +316,23 @@ int numerEdycjiOsoby = scanner.nextInt();
 //                  licznikPracownikow--;
 //          }
 
+public void obliczLPracownikowZPensja(){
+        int ponadPensja = 0;
+    System.out.println("Podaj wartość, od któej mam pokazać liczbę osób z większą wartością: ");
+    Scanner scanner = new Scanner (System.in);
+    float wartoscplaca = scanner.nextFloat();
+    for (int i = 0; i <listaPracownikow.length ; i++) {
+        if(listaPracownikow[i] != null) {
+            if (listaPracownikow[i].getPlaca() > wartoscplaca) {
+                ponadPensja++;
 
-
-
+            }
+        }
     }
+
+    System.out.println("Jest " + ponadPensja + " osób  z pensją ponad" + wartoscplaca);
+    }
+
+
+}
 

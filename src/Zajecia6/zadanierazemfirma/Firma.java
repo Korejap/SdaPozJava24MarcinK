@@ -33,6 +33,8 @@ listaPracownikow.dodajNowegoPracownika();
                 case "6":
                     listaPracownikow.wypiszWszystkichPracownikowFull();
                     listaPracownikow.edycjaDanych();
+                case "7":
+                    listaPracownikow.obliczLPracownikowZPensja();
                 default:
                     System.out.println("Błedna akcja");
 
