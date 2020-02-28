@@ -1,5 +1,9 @@
 package Zajecia6.zadanierazemfirma;
 
+import javax.xml.transform.Source;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class Firma {
     public static void main(String[] args) {
         Menu menu = new Menu();
@@ -34,7 +38,16 @@ listaPracownikow.dodajNowegoPracownika();
                     listaPracownikow.wypiszWszystkichPracownikowFull();
                     listaPracownikow.edycjaDanych();
                 case "7":
-                    listaPracownikow.obliczLPracownikowZPensja();
+                    System.out.println("Nowe menu. 1 - Ile pracowników pensja. |  2 - średnia z działu. | Podaj numer:");
+                    Scanner scanner = new Scanner(System.in);
+                    int wybor = scanner.nextInt();
+                    switch (wybor){
+                        case 1:
+                            listaPracownikow.obliczLPracownikowZPensja();
+                        case 2:
+                            listaPracownikow.sredniaPlacyZDzialu();
+                    }
+
                 default:
                     System.out.println("Błedna akcja");
 

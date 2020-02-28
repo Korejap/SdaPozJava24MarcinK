@@ -316,6 +316,8 @@ int numerEdycjiOsoby = scanner.nextInt();
 //                  licznikPracownikow--;
 //          }
 
+
+
 public void obliczLPracownikowZPensja(){
         int ponadPensja = 0;
     System.out.println("Podaj wartość, od któej mam pokazać liczbę osób z większą wartością: ");
@@ -330,9 +332,30 @@ public void obliczLPracownikowZPensja(){
         }
     }
 
-    System.out.println("Jest " + ponadPensja + " osób  z pensją ponad" + wartoscplaca);
+    System.out.println("Jest " + ponadPensja + " osób  z pensją ponad " + wartoscplaca);
     }
 
+
+
+    public void sredniaPlacyZDzialu(){
+        System.out.println("Podaj nume działu, z którego ma być obliczona średnia.");
+        Scanner scanner = new Scanner(System.in);
+        int numerDzialudoSredniej = scanner.nextInt();
+        float sumaPlacZDzialu = 0;
+        float sredniaZDzialu = 0;
+        int podzielnaDoSredniej = 0;
+
+        for (int i = 0; i <listaPracownikow.length ; i++) {
+            if(listaPracownikow[i] != null) {
+                if (listaPracownikow[i].getNumerDzialu() == numerDzialudoSredniej) {
+                    podzielnaDoSredniej++;
+                    sumaPlacZDzialu += listaPracownikow[i].getPlaca();
+                }
+            }
+
+        }
+        System.out.println("Srednia z działu " + numerDzialudoSredniej + " wynosi " + (sumaPlacZDzialu/podzielnaDoSredniej) );
+    }
 
 }
 
