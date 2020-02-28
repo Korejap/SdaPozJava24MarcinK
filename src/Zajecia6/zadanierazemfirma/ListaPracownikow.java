@@ -11,7 +11,7 @@ Random random = new Random();
     private int licznikPracownikow = 0;  //todo fajne, do przejrzenia i zapamietania
 
     public ListaPracownikow() {
-        Osoba p1 = new Osoba("Filip", "Ecjo", 'M', 2, 20, 20, 2, true);
+        Osoba p1 = new Osoba("Filip", "Ecjo", 'M', 2, 300, 20, 2, true);
         listaPracownikow[licznikPracownikow++] = p1;
 
         Osoba p2 = new Osoba("Iwona", "Eco", 'K', 1, 300, 30, 0, false);
@@ -356,6 +356,53 @@ public void obliczLPracownikowZPensja(){
         }
         System.out.println("Srednia z działu " + numerDzialudoSredniej + " wynosi " + (sumaPlacZDzialu/podzielnaDoSredniej) );
     }
+public void najwiekszaPensjaMiK() {
+    float najwieksaPensjaM = 0;
+    float najwiekszaPensjaK = 0;
 
+    for (int i = 0; i < listaPracownikow.length; i++) {
+        if (listaPracownikow[i] != null) {
+            if (listaPracownikow[i].getPlec() == 'K') {
+                if (najwiekszaPensjaK < listaPracownikow[i].getPlaca()) {
+                    najwiekszaPensjaK = listaPracownikow[i].getPlaca();
+                }
+            } else {
+                if (najwieksaPensjaM < listaPracownikow[i].getPlaca()) {
+                    najwieksaPensjaM = listaPracownikow[i].getPlaca();
+                }
+            }
+        }
+
+
+    }
+    System.out.println("Największa pensja wśród kobiet: " + najwiekszaPensjaK + " | Największa pensja wśród mężczyzn: " + najwieksaPensjaM );
+}
+
+public void stosunekSrednieplacy(){
+
+
+    float sumaPlacK = 0;
+    float sumaPlacM = 0;
+
+    int podzielnaDoSredniejK = 0;
+    int podzielnaDoSredniejM = 0;
+
+    for (int i = 0; i <listaPracownikow.length ; i++) {
+        if(listaPracownikow[i] != null) {
+            if (listaPracownikow[i].getPlec() == 'K') {
+                podzielnaDoSredniejK++;
+                sumaPlacK += listaPracownikow[i].getPlaca();
+            }else{
+                podzielnaDoSredniejM++;
+                sumaPlacM += listaPracownikow[i].getPlaca();
+            }
+        }
+
+    }
+
+    float sredniaK = sumaPlacK/podzielnaDoSredniejK;
+    float sredniaM = sumaPlacM/podzielnaDoSredniejM;
+    System.out.println("Stosunek średniej płacy kobiet do średniej płacy mężczyzn wynosi: " + (sredniaK/sredniaM)  );
+}
 }
 
