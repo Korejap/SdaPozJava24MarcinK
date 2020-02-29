@@ -40,7 +40,7 @@ listaPracownikow.dodajNowegoPracownika();
                     listaPracownikow.edycjaDanych();
                     break;
                 case "7":
-                    System.out.println("Nowe menu. 1 - Ile pracowników pensja. |  2 - średnia z działu. | Podaj numer:");
+                    System.out.println("Nowe menu. 1 - Ile pracowników pensja. |  2 - średnia z działu. | 3 - największa pensja. | 4 - stosunek placy." +'\n' + "Podaj numer:");
                     Scanner scanner = new Scanner(System.in);
                     int wybor = scanner.nextInt();
                     switch (wybor){

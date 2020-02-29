@@ -11,7 +11,7 @@ Random random = new Random();
     private int licznikPracownikow = 0;  //todo fajne, do przejrzenia i zapamietania
 
     public ListaPracownikow() {
-        Osoba p1 = new Osoba("Filip", "Ecjo", 'M', 2, 300, 20, 2, true);
+        Osoba p1 = new Osoba("Filip", "Ecjo", 'M', 2, 290, 20, 2, true);
         listaPracownikow[licznikPracownikow++] = p1;
 
         Osoba p2 = new Osoba("Iwona", "Eco", 'K', 1, 300, 30, 0, false);
@@ -402,7 +402,7 @@ public void stosunekSrednieplacy(){
 
     float sredniaK = sumaPlacK/podzielnaDoSredniejK;
     float sredniaM = sumaPlacM/podzielnaDoSredniejM;
-    System.out.println("Stosunek średniej płacy kobiet do średniej płacy mężczyzn wynosi: " + (sredniaK/sredniaM)  );
+    System.out.println("Stosunek średniej płacy kobiet do średniej płacy mężczyzn wynosi 1 : " + (sredniaK/sredniaM)  );
 }
 }
 
