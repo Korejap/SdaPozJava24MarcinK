@@ -9,7 +9,7 @@ public class SzyfCezara {
 
         System.out.println("Wpisz swoją wiadomość");
 
-        String wiadomosc = scanner.nextLine();
+        String wiadomosc = scanner.nextLine().toLowerCase();
 
         System.out.println("Wpisz o ile miejsc ma być zaszyfrowane:");
         int klucz = scanner.nextInt();

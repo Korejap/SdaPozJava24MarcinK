@@ -73,7 +73,7 @@ int losowaDoPodpowiedzi = 0;
                         case 1:
                         liczbaPodpowiedzi--;
                         losowaDoPodpowiedzi = random.nextInt(4);
-                        System.out.println("Cyfrą " + (losowaDoPodpowiedzi + 1) + "od lewej strony jest: " + tablica[losowaDoPodpowiedzi]);
+                        System.out.println("Cyfrą " + (losowaDoPodpowiedzi + 1) + " od lewej strony jest: " + tablica[losowaDoPodpowiedzi]);
                         break;
                         default:
                             break;

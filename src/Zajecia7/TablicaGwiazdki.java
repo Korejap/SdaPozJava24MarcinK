@@ -14,7 +14,7 @@ public class TablicaGwiazdki {
         Scanner sc = new Scanner(System.in);
 
         String userAnswer = sc.nextLine();
-
+        System.out.println("Enter your numbers");
         String[] table = userAnswer.split(" ");
 
 int[] tableInt = new int[table.length];
@@ -23,7 +23,7 @@ int[] tableInt = new int[table.length];
         }
 
         for (int i = 0; i <table.length ; i++) {
-            System.out.print(i + ": ");
+            System.out.print(i +  ": ");
 
             for (int j = 0; j < tableInt[i] ; j++) {
 
